@@ -15,15 +15,16 @@ int main(int argc, char **argv){
 	client.waitForExistence();
 	client.call(new_turtle);
 	
-	ros::Publisher pub1 = nh.advertise<geometry_msgs::Twist>("turtle1/cmd_vel", 1);
-	ros::Publisher pub2 = nh.advertise<geometry_msgs::Twist>("turtle2/cmd_vel", 1);
+	ros::Publisher pub1 = nh.advertise<geometry_msgs::Twist>("turtle1/cmd_vel", 10);
+	ros::Publisher pub2 = nh.advertise<geometry_msgs::Twist>("turtle2/cmd_vel", 10);
 	
-	ros::Rate loop_rate(1);
+	ros::Rate loop_rate(10);
 	geometry_msgs::Twist new_vel;
 	
 	int selected_turtle;
 	bool check = false;
 	
+	loop_rate.sleep();
 	while (ros::ok()){
 		do{
 			std::cout<<"Chose the turtle to control (1 or 2): ";
@@ -32,7 +33,7 @@ int main(int argc, char **argv){
 			if(selected_turtle == 1 || selected_turtle == 2){
 				check = true;
 			}else{
-				std::cout<<"Turtle "<<selected_turtle<<"doesn't exis";
+				std::cout<<"Turtle "<<selected_turtle<<" doesn't exis"<<std::endl;
 			}
 		}while(!check);
 		
