@@ -5,7 +5,7 @@ The first node will spawn the turtle2 (position 2.0-2.0 and orientation 0.0 arbi
 The second node calculate the relative distance between the turtles and publish it on the topic /distance.
 If the turtles are closer than a selected threshold (1.0), it's GAME OVER for both the players.
 As already sed, if one of the turtles is too close to the wall (lower bound = 0.5 and upper bound = 10.5), it's GAME OVER for that player, but the other one can keep play until he also hit the wall or get too close to the other turtle.
-GAME OVER messages will be displayed on the terminal.
+GAME OVER messages will be displayed on the terminal and the Distance node will shutdown alone.
 
 In order to run the code you need to do the following steps:
 
@@ -20,4 +20,4 @@ In order to run the code you need to do the following steps:
 - Run the Distance_node (rosrun assignment1_rt Distance.py).
 (Unfortunatly sometimes the Distance_node will publish GAME OVER message; in this case restart the node)
 
-If you loose the game you need to restart the three nodes.
+If you lose the game, you need to restart the three nodes.
