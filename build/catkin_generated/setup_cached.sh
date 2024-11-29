@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/root/assignment1/devel:$CMAKE_PREFIX_PATH"
 export PWD='/root/assignment1/build'
-export ROSLISP_PACKAGE_DIRECTORIES="/root/assignment1/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/root/assignment1/src:$ROS_PACKAGE_PATH"
