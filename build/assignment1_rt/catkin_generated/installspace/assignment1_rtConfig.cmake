@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(assignment1_rt_LIBRARIES ${assignment1_rt_LIBRARIES})
 
   _list_append_unique(assignment1_rt_LIBRARY_DIRS ${${assignment1_rt_dep}_LIBRARY_DIRS})
-  list(APPEND assignment1_rt_EXPORTED_TARGETS ${${assignment1_rt_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(assignment1_rt_EXPORTED_TARGETS ${${assignment1_rt_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

@@ -49,7 +49,7 @@ int main(int argc, char **argv){
 		}else if(selected_turtle == 2){
 			pub2.publish(new_vel);
 		}
-	
+
 		check = false;
 		ros::spinOnce;
 		loop_rate.sleep();
